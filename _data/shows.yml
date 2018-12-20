@@ -1,9 +1,17 @@
 - name: North Coast Modular Collective Showcase
-  location: Ann Arbor Public Library
+  location: Ann Arbor Public Library, Ann Arbor, MI
   date: 2018
 
-- location: Ann Arbor Public Library
+- name: Riverside Tech Show
+  location: Riverside Art Center, Ypsilanti, MI
   date: 2018
 
-- location: Necto
+- location: Cultivate, Ypsilanti, MI
   date: 2018
+
+- location: Necto, Ann Arbor, MI
+  date: 2017
+
+- name: North Coast Modular Collective Showcase
+  location: Dreamland Theatre, Ypsilanti, MI
+  date: October 2017
