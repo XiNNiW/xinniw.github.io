@@ -1,0 +1,13 @@
+---
+layout: default
+title: shows
+---
+
+
+{% for show in site.data.shows %}
+    <p>
+       > <span class="li--span-location">{{ show.location }}</span>
+        <span class="li--span-date">{{ show.date }}</span>
+        <span class="li--span-date">{{ show.name }}</span>
+    </p>
+{% endfor %}
