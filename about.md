@@ -3,10 +3,10 @@ title: about
 ---
 
 
-XiNNiW is david minnix.
+xinniw is david minnix.
 
--
+using synthesizers, samplers, and algorithms david makes music that blends impressionistic ambience, playful melodies, and frenetic rhythms into a sound that recalls Aphex Twin, The Field, and Autechre
 
-david makes music with synthesizers, samplers, groove boxes, and algorithms in a small electric blue room in ann arbor michigan.
--------
 ambient techno, ann arbor, michigan, united states, live
+
+## {{site.booking_message}}

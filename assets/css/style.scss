@@ -6,3 +6,50 @@
 .iframe--player-container{
     max-width: 700px;
 }
+
+.li--span-location{
+    font-size: 80%;
+    text-transform: uppercase;
+}
+
+.li--span-name{
+    font-size: 85%;
+}
+
+.li--span-date{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    font-size:100%;
+}
+
+.li--span-seperator{
+    font-size: 70%;
+}
+
+.shows span {
+    overflow: hidden; 
+    white-space: nowrap;
+    margin: 0 auto; 
+    letter-spacing: .15em;
+
+  }
+
+.bg {
+    /* The image used */
+    background-image: url('/assets/images/background.jpg');
+
+    // /* Full height */
+    height: 7em; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    // background-size: 100% auto;
+}
+  
+.footer--p-credit {
+    font-style: italic;
+    font-size: 85%;
+}
