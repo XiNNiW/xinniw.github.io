@@ -4,6 +4,7 @@
 {% assign randomNumber = "now" | date: "%N" | modulo: max %}
 {% assign randomNumber1 = "now" | date: "%N" | modulo: max %}
 {% assign randomNumber2 = "now" | date: "%N" | modulo: max %}
+{% assign randomNumber3 = "now" | date: "%N" | modulo: max %}
 
 {% assign snippets = site.data.tidalsnippets %}
 
@@ -15,10 +16,13 @@
 </code>
 <code class="language-haskell insert--code-tidalcode">
     {{ snippets[randomNumber1].code }}
-    </code>
-    <code class="language-haskell insert--code-tidalcode">
-        {{ snippets[randomNumber2].code }}
-        </code>
+</code>
+<code class="language-haskell insert--code-tidalcode">
+    {{ snippets[randomNumber2].code }}
+</code>
+<code class="language-haskell insert--code-tidalcode">
+    {{ snippets[randomNumber3].code }}
+</code>
 <!-- {% for snippet in snippets %} -->
 <!-- {% endfor %} -->
 

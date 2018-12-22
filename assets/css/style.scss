@@ -84,7 +84,7 @@
 }
 
 .insert--code-tidalcode:nth-child(2){
-    top: 7%;
+    top: 20%;
     right: 42em;
     font-size: 1em;
 }
@@ -93,6 +93,12 @@
     top: 13%;
     right: 24%;
     font-size: 3em;
+}
+
+.insert--code-tidalcode:nth-child(4){
+    top: 80%;
+    right: 20em;
+    font-size: 4em;
 }
 
 div.insert--div-tidalcode>code.insert--code-tidalcode{
