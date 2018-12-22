@@ -53,3 +53,59 @@
     font-style: italic;
     font-size: 85%;
 }
+
+.background-div--effect{
+    position:static;
+    z-index: -1;
+    top:0;
+    right:0;
+
+}
+
+.insert--div-tidalcode{
+    position: fixed;
+    perspective: 1px;
+    text-align: center;
+    font-family: 'Gilda Display', serif;
+
+    text-align: center;
+    width: 100%;
+    height: 120px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -60px;
+    right: 0;
+    -webkit-animation: noise-3 1s linear infinite;
+            animation: noise-3 1s linear infinite;
+    overflow: default;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.insert--code-tidalcode:nth-child(1){
+    top: 9%;
+    right: 10em;
+    background: none;
+    font-size: 2em;
+}
+
+.insert--code-tidalcode:nth-child(2){
+    top: 7%;
+    right: 30em;
+    font-size: 1em;
+}
+
+.insert--code-tidalcode:nth-child(3){
+    top: 13%;
+    right: 24%;
+    font-size: 3em;
+}
+
+div.insert--div-tidalcode>code.insert--code-tidalcode{
+    position: absolute;
+    background: none;
+    border:none;
+    z-index: -1;
+}
