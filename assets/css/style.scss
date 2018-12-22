@@ -36,17 +36,13 @@
   }
 
 .bg {
-    /* The image used */
     background-image: url('/assets/images/background.jpg');
 
-    // /* Full height */
     height: 7em; 
 
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% auto;
-    // background-size: 100% auto;
 }
   
 .footer--p-credit {
@@ -55,7 +51,7 @@
 }
 
 .background-div--effect{
-    position:static;
+    position:fixed;
     z-index: -1;
     top:0;
     right:0;
@@ -63,22 +59,18 @@
 }
 
 .insert--div-tidalcode{
-    position: fixed;
     perspective: 1px;
     text-align: center;
-    font-family: 'Gilda Display', serif;
 
-    text-align: center;
     width: 100%;
-    height: 120px;
+    height: 12em;
     margin: auto;
     position: absolute;
     top: 0;
     bottom: 0;
     left: -60px;
     right: 0;
-    -webkit-animation: noise-3 1s linear infinite;
-            animation: noise-3 1s linear infinite;
+
     overflow: default;
     opacity: 0.1;
     z-index: -1;
@@ -93,7 +85,7 @@
 
 .insert--code-tidalcode:nth-child(2){
     top: 7%;
-    right: 30em;
+    right: 42em;
     font-size: 1em;
 }
 
@@ -104,7 +96,7 @@
 }
 
 div.insert--div-tidalcode>code.insert--code-tidalcode{
-    position: absolute;
+    position: fixed;
     background: none;
     border:none;
     z-index: -1;
