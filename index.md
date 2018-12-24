@@ -1,5 +1,5 @@
 ---
 show_players: true
-title: home
+title: blog
 ---
 

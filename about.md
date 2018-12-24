@@ -10,3 +10,5 @@ using synthesizers, samplers, and algorithms david makes music that blends impre
 ambient techno, ann arbor, michigan, united states, live
 
 ## {{site.booking_message}}
+
+{% include support-me-on-kofi.html %}
