@@ -5,7 +5,7 @@ categories: samples
 
 ---
 
-My uncle recently gave me my grandmother's autoharp. I really love the instruments and think the strings sound super unique. I recorded each string and created a sample pack of the recordings so I could use them in tidalcycles and other tools that I use to make music. 
+My uncle recently gave me my grandmother's autoharp. I really love the instruments and think the strings sound super unique. I recorded each string and created a sample pack of the recordings so i could use them in tidalcycles and other tools that I use to make music. 
 
 If you want to play with the samples they are available for download here: [lile autoharp samples ]({{site.url}}/downloads)
 

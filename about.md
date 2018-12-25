@@ -11,4 +11,4 @@ ambient techno, ann arbor, michigan, united states, live
 
 ## {{site.booking_message}}
 
-{% include support-me-on-kofi.html %}
+<!-- {% include support-me-on-kofi.html %} -->
