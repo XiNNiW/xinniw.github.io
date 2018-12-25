@@ -6,3 +6,6 @@ description: ambient, techno, future music
 facebook_username: xinniw.minnix
 booking_message: 'for booking contact: minnix.xinniw@gmail.com'
 title: xinniw
+plugins:
+  - jekyll-feed
+rss: 'xinniw feed'
