@@ -9,3 +9,4 @@ title: xinniw
 plugins:
   - jekyll-feed
 rss: 'xinniw feed'
+google_analytics: 'UA-154118349-1'
