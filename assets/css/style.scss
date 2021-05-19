@@ -115,3 +115,15 @@ div.insert--div-tidalcode>code.insert--code-tidalcode{
 .downloads--a-link {
     float:right
 }
+
+.invalid-link {
+    color: #444444;
+    cursor: help;
+    background: #fafafa;
+    padding: 0 0.1em;
+  }
+  
+.invalid-link-brackets {
+color: #ccc;
+cursor: help;
+}
