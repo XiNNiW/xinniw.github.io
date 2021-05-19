@@ -1,0 +1,33 @@
+I"u	<h1 id="bandlimited-oscillator">Bandlimited Oscillator</h1>
+<p>Within digital audio, a band limited oscillator is any oscillator algorithm that refrains from producing harmonics above the 1/2 sample rate limit. It produces no <a class="internal-link" href="/aliasing">aliasing</a> artifacts. (see: <a class="internal-link" href="/bandlimiting">Bandlimiting</a>)</p>
+
+<p>Consider the Fourier expansion a perfect sawtooth wave:
+\(y(t) = \frac {1} {2} - \sum_{n=0}^\infty \frac {1} {n\pi} sin(2\pi nt)\)</p>
+
+<p>It requires an infinite number of harmonics to create. Even for low frequency waves, some of those harmonics will alias. As the fundamental frequency increases the <a class="internal-link" href="/aliasing">aliasing</a> distortion will get worse as more and more harmonics fold over.</p>
+
+<p>This kind of <a class="internal-link" href="/aliasing">aliasing</a> can occur for most complex waveforms, even those that can be represented with a finite number of harmonics. At some point on the keyboard they may begin to alias and distort.</p>
+
+<p>The effect is typically not very pleasing for an oscillator. (it sounds like crap)</p>
+
+<p>In order to create musically useful complex waves care has to be taken to ensure that no harmonic content will alias.</p>
+
+<p>Here are some algorithms for generating bandlimited waves:</p>
+<ol>
+  <li><a class="internal-link" href="/blit">BLIT</a></li>
+  <li><span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  BLEP
+  <span class="invalid-link-brackets">]]</span></span></li>
+  <li><a class="internal-link" href="/minblep">minBLEP</a></li>
+  <li><a class="internal-link" href="/dsf">DSF</a></li>
+  <li><span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  Additive Synthesis
+  <span class="invalid-link-brackets">]]</span></span></li>
+</ol>
+
+<p>Sometimes it is not possible or not feasible to band-limit an oscillator algorithm. (eq. <a class="internal-link" href="/fm-synthesis">FM Synthesis</a>) In those circumstances <a href="Quasi-Bandlimited Oscillator.md">Quasi-Bandlimited</a> techniques are useful.</p>
+
+<p>Other times bandlimiting is not necessary as the generated sound is noisy and chaotic enough that the aliased harmonics blend in with the noise. (eg. <a class="internal-link" href="/white-noise">White Noise</a>)</p>
+:ET

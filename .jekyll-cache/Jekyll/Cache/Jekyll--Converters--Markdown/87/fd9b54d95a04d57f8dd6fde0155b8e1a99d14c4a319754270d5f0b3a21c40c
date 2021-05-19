@@ -1,0 +1,11 @@
+I"–<h1 id="minblep-minimum-band-limited-step">MinBlep (Minimum Band-Limited Step)</h1>
+
+<p>MinBlep is an algorithm for generating bandlimited classic analog waveforms with a computer. It allows for flexibility in modulating the shape of the waveform that is typically available on analog equipment. (eg. hard sync) This algorithm was first outlined in the paper <em>Hard sync without aliasing</em> by Eli Brandt. (paper available <a href="https://www.cs.cmu.edu/~eli/papers/icmc01-hardsync.pdf">here</a>)</p>
+
+<p>Hard-sync is where one oscillator resets the phase of another. The frequency of one of the oscillators is typically swept to produce a modulation of the harmonic spectra.</p>
+
+<p>Resetting the phase exactly on a computer introduces discontinuities that are not band-limited.</p>
+
+<h1 id="the-algorithm">the algorithm</h1>
+<p>Emulating hard-sync using <a class="internal-link" href="/blit">BLIT</a> typically requires the generation of a band-limited synchronization signal where resets must be calculated to fall on sample boundaries. Tables are generated storing these various impulses and are referenced and integrated. In BLEP the integration is done first</p>
+:ET

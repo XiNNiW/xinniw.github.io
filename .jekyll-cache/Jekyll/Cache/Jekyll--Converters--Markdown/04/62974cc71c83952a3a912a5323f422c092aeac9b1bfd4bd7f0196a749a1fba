@@ -1,0 +1,19 @@
+I"�<h1 id="fourier-series">Fourier Series</h1>
+<p>Fourier’s theorem states that any periodic function can be approximated perfectly by some weighted sum of harmonic sine and cosine waves. This sum is often infinite.
+(see: <a href="https://en.wikipedia.org/wiki/Fourier_series">wikipedia</a>)</p>
+
+<p>Arbitrary signals can be analyzed to determine the weights for the Fourier series that approximates them. This kind of analysis can be used to transform a <span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  Time Domain]] signal into a [[Frequency Domain]] signal. This transformation is the first step in a variety of [[Spectral Processing
+  <span class="invalid-link-brackets">]]</span></span> algorithms.</p>
+
+<p>In calculus this is represented by the <span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  Fourier Transform]]. For DSP and digital audio a variety of [[Discrete Fourier Transform (DFT)
+  <span class="invalid-link-brackets">]]</span></span> algorithms exist. Some of these algorithms can operate in real time.</p>
+
+<p>Since Fourier’s theorem only holds for signals that are perfectly periodic (ie. signals that repeat exactly forever) these transform algorithms often slice an input signal into “windows”. Each window is assumed to repeat forever so that the frequencies present in each window can be derived by computing the Fourier transform. This “windowing” operation is a source of error and is an example of an <span title="There is no note that matches this link." class="invalid-link">
+  <span class="invalid-link-brackets">[[</span>
+  orthogonal property
+  <span class="invalid-link-brackets">]]</span></span>. The more you know about the signals what frequencies are present in a window (ie. a larger window size), the less you know about <em>when</em> those frequencies occurred in the time domain.</p>
+:ET

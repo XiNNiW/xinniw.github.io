@@ -1,0 +1,8 @@
+I"[<h1 id="closures">Closures</h1>
+<p>Closures are a way of treating a function as an object. Functional language generally let the programmer define anonymous functions that “enclose” data that is needed for their function. These functions can then be composed with others to form larger structure. For example, consider the following <code class="language-plaintext highlighter-rouge">js</code> function:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function saySomthing(something) {
+	return ()=&gt;"say" + " " + something;
+}
+</code></pre></div></div>
+<p>The function <code class="language-plaintext highlighter-rouge">saySomething</code> “encloses” the value something and then returns a function that, when called returns the value of something concatenated with the string “say”.</p>
+:ET

@@ -6,7 +6,56 @@ description: ambient, techno, future music
 facebook_username: xinniw.minnix
 booking_message: 'for booking contact: minnix.xinniw@gmail.com'
 title: xinniw
+safe: false
 plugins:
   - jekyll-feed
+  - jekyll-last-modified-at
 rss: 'xinniw feed'
 google_analytics: 'UA-154118349-1'
+
+# If you are using a host that cannot resolve URLs that do
+# not end with .html (such as Neocities), set this to 'true'.
+use_html_extension:  false
+
+# Set to `true` to open non-internal links in new tabs, or
+# set to `false` to open non-internal links in current tab.
+open_external_links_in_new_tab: true
+
+permalink:           pretty
+relative_permalinks: false
+
+  
+
+collections:
+  gardens:
+    output: true
+    permalink: /:slug
+
+  # posts:
+  #   output: true
+
+defaults:
+  - scope:
+      path: "_gardens/**/*.md"
+      type: "gardens"
+    values:
+      layout: "note"
+  - scope:
+      path: "_posts/**/*.md"
+      type: "posts"
+    values:
+      layout: "post"
+  # - scope:
+  #     path: ""
+  #   values:
+  #     layout: "default"
+
+# defaults:
+#   - scope:
+#       path: "**/*"
+#     values:
+#       layout: "default"
+#   - scope:
+#       path: "_gardens/**/*.md"
+#     values:
+#       layout: "note"
