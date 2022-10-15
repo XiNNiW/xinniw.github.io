@@ -4,6 +4,41 @@
 @import "{{ site.theme }}";
 //@import "assets/css/code";
 
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+  }
+  @mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+  }
+  @mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+  }
+  @mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+  }
+  @mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+  }
+
+.span--project-title {
+    font-style: bold;
+    font-style: oblique;
+    font-size: 110%
+    // text-transform: uppercase;
+}
+.img--project {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+.link--project-primary {
+    float:right;
+    font-size: 90%;
+    @include for-phone-only{
+        font-size: 70%;
+    }
+}
+
 .iframe--player-container{
     max-width: 700px;
 }
@@ -122,10 +157,10 @@ div.insert--div-tidalcode>code.insert--code-tidalcode{
     cursor: help;
     background: #fafafa;
     padding: 0 0.1em;
-  }
+}
   
 .invalid-link-brackets {
-color: #ccc;
-cursor: help;
+    color: #ccc;
+    cursor: help;
 }
 
