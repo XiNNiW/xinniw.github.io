@@ -1,9 +1,13 @@
 theme: minima
-instagram_username: minnix_xinniw
+# instagram_username: minnix_xinniw
+# <a rel="me" href="https://post.lurk.org/@xinniw">
+mastodon:
+  - instance: post.lurk.org
+    username: xinniw
 spotify_username: xinniw
 youtube_channel: UCV75fqpnnjCmM0I7Fogf53w
 description: ambient, techno, future music
-facebook_username: xinniw.minnix
+# facebook_username: xinniw.minnix
 booking_message: 'for booking contact: minnix.xinniw@gmail.com'
 title: xinniw
 safe: false
