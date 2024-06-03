@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/loop unrolling.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/loop
+unrolling.md
+    </div>
+<hr />
+<h1 id="loop-unrolling">Loop Unrolling</h1>
+<p>:cc0:</p>
+<p>Loop unrolling is an optimization that is typically made by the
+compiler, although it can be manually accomplished in assembly. When an
+iteration occurs in the code, and the number of times the iteration
+loops is known at compile time, the loop can be unrolled. Unrolling the
+loop means replacing the iteration instruction with hard-coded
+instructions for each iteration one after the other. For example,
+consider the following loop:</p>
+<pre><code>for (size_t index=0; index&lt;3; index++){
+    std::cout&lt;&lt;index;
+}</code></pre>
+<p>The unrolled version is:</p>
+<pre><code>std::cout&lt;&lt;1;
+std::cout&lt;&lt;2;
+std::cout&lt;&lt;3;</code></pre>
+<p>Since we know we are going to loop 3 times when we compile, we can
+replace the loop with hard-coded instructions. The resulting assembly is
+much faster than conditionally looping.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/loop
+unrolling.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

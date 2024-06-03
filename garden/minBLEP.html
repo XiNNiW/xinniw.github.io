@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/minBLEP.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/minBLEP.md
+    </div>
+<hr />
+<h1 id="minblep-minimum-band-limited-step">MinBlep (Minimum Band-Limited
+Step)</h1>
+<p>MinBlep is an algorithm for generating bandlimited classic analog
+waveforms with a computer. It allows for flexibility in modulating the
+shape of the waveform that is typically available on analog equipment.
+(eg. hard sync) This algorithm was first outlined in the paper <em>Hard
+sync without aliasing</em> by Eli Brandt. (paper available <a
+href="https://www.cs.cmu.edu/~eli/papers/icmc01-hardsync.pdf.html">here</a>)</p>
+<p>Hard-sync is where one oscillator resets the phase of another. The
+frequency of one of the oscillators is typically swept to produce a
+modulation of the harmonic spectra.</p>
+<p>Resetting the phase exactly on a computer introduces discontinuities
+that are not band-limited.</p>
+<h1 id="the-algorithm">the algorithm</h1>
+<p>Emulating hard-sync using <a href="BLIT.html">BLIT</a> typically
+requires the generation of a band-limited synchronization signal where
+resets must be calculated to fall on sample boundaries. Tables are
+generated storing these various impulses and are referenced and
+integrated. In BLEP the integration is done first...</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/minBLEP.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

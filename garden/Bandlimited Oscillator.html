@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Bandlimited Oscillator.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Bandlimited
+Oscillator.md
+    </div>
+<hr />
+<p>:cc0:</p>
+<h1 id="band-limited-oscillator">Band-limited Oscillator</h1>
+<p>Within digital audio, a band limited oscillator is any oscillator
+algorithm that refrains from producing harmonics above the 1/2 sample
+rate limit. It produces no <a href="aliasing">aliasing</a> artifacts.
+(see: <a href="Bandlimiting.html">Bandlimiting</a>)</p>
+<p>Consider the Fourier expansion a perfect sawtooth wave:</p>
+<p>$ y(t) = \frac {1} {2} - \sum_{n=0}^\infty \frac {1} {n\pi} sin(2\pi
+nt) $</p>
+<p>It requires an infinite number of harmonics to create. Even for low
+frequency waves, some of those harmonics will alias. As the fundamental
+frequency increases the [[aliasing]] distortion will get worse as more
+and more harmonics fold over.</p>
+<p>This kind of <a href="aliasing.html">aliasing</a> can occur for most
+complex waveforms, even those that can be represented with a finite
+number of harmonics. At some point on the keyboard they may begin to
+alias and distort.</p>
+<p>The effect is typically not very pleasing for an oscillator. (it
+sounds like crap)</p>
+<p>In order to create musically useful complex waves care has to be
+taken to ensure that no harmonic content will alias.</p>
+<p>Here are some algorithms for generating band-limited waves: - <a
+href="BLIT.html">BLIT</a> - <a href="BLEP.html">BLEP</a> - <a
+href="minBLEP.html">minBLEP</a> - <a href="PolyBLEP.html">PolyBLEP</a> -
+<a href="DSF.html">DSF</a> - <a href="Additve%20Synthesis.html">Additive
+Synthesis</a></p>
+<p>Sometimes it is not possible or not feasible to band-limit an
+oscillator algorithm. (eg. <a href="FM%20Synthesis">FM Synthesis</a>) In
+those circumstances <a
+href="Quasi-Bandlimited%20Oscillator.md.html">Quasi-Bandlimited</a>
+techniques are useful.</p>
+<p>Other times band-limiting is not necessary as the generated sound is
+noisy and chaotic enough that the aliased harmonics blend in with the
+noise. (eg. <a href="White%20Noise.html">White Noise</a>)</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Bandlimited
+Oscillator.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/sustainable computing.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/sustainable
+computing.md
+    </div>
+<hr />
+<h1 id="sustainable-computing">Sustainable Computing</h1>
+<p>Given how the supply chain for computers is creating massive
+ecological harm, is there any way to create a more sustainable way of
+computing.</p>
+<p>The most sustainable computer is the one you already own. Therefore,
+sustainable computing must include software specifically designed to be
+performant on a wide variety of older hardware.</p>
+<h3 id="portability">portability</h3>
+<p>Software written against particular hardware is difficult to make
+portable. The abstraction offered by a virtual machine can insulate
+software logic from the specifics of a given piece of computer hardware.
+The most ecologically sound computer hardware will be scavenged or
+upcycled making the number of devices that need unique support is
+potentially very large. Therefore, this virtual machine must remain
+small enough to be easy to implement by a single person within a few
+weeks of effort. This need for simplicity is in conflict with the
+features that would be most useful for such a machine. Given hardware
+variability, system interaction should degrade gracefully when hardware
+features are not present. End-user facing software should take into
+account a large number of alternate input and interaction methods.</p>
+<p>Software may also need to consider the possibility that the hardware
+may prefer 8, 16, 32, or 64 bit numbers. Systems like
+<em>hundredrabbit's</em> <em>UXN</em> circumvent this problem by only
+including 8bit numbers. This limitation makes it incredibly difficult to
+compute real-time audio, however. I think <a
+href="fantasy%20virtual%20music%20machine.html">a different balance
+between these trade-offs</a> would need to be struck to create a
+sustainable computer music environment.</p>
+<p>The system I am imagining may need to present numerical types and
+sizes in a way that allows the use of larger types, if available. It
+should also provide the capacity to fail over gracefully to smaller
+types. Small number sizes should be preferred where practical. Numerical
+types may need to be templated and alternate code written for each
+size.</p>
+<h4 id="dependency">dependency</h4>
+<p>Software dependencies should be carefully vetted for resource use,
+hardware assumptions, and platform restrictions.</p>
+<h3 id="resource-utilization">resource utilization</h3>
+<p>Resource utilization should be as minimal as possible. Software
+should potentially be written to adapt to different resource profiles,
+providing different feature implementations for each level.</p>
+<h3 id="aesthetics">aesthetics</h3>
+<p>Life-like replication of sensory experiences using computers have
+been enabled by increasing filesizes, bitdepths, and samplerates.
+Advertising resource use of media became a kind of shorthand to signify
+its quality. This isn't to say that it is pointless to operate on 32bit
+float, 96k sampled audio, for example. There are manipulations that you
+can make using these specs that you cannot make without degrading the
+quality of the output in a noticeable way. However, the aesthetic
+quality of the degradation is sometimes interesting in of itself. Who is
+to say which version is better? Does a sustainable version of computing
+require different aesthetics for media - one that appreciates the sound
+of these distortions? Its not as if these distortions are universally
+despised, or even that they are unpleasant. There are event plugins that
+spend extra CPU resources to emulate them on systems where they will not
+be produced naturally.</p>
+<p>In an essay on <a href="Permacomputing.html">Permacomputing</a>,
+viznut speculates about this aesthetic: "For extreme realism,
+perfection, detail and sharpness, people would prefer to look at
+nature."</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/sustainable
+computing.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

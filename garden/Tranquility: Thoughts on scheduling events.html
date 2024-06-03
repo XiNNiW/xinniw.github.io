@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Tranquility: Thoughts on scheduling
+events.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Tranquility:
+Thoughts on scheduling events.md
+    </div>
+<hr />
+<h1 id="thought-on-scheduling-events">thought on scheduling events</h1>
+<p>One of the main responsibilities of the tranquility application is to
+periodically query the user specified patterns and convert the resulting
+events into osc messages. These osc messages contain the timing
+information required by the SuperDirt synth to play them when they are
+expected. The scheduling process repeats this operation every 1/20th of
+a second - collecting all the events for that time period, converting
+them to osc, and sending them over the network to SuperDirt (or other
+synth target). In order to accomplish this we need the following: - a
+clock (a way of scheduling functions in time) - a way of converting
+patterns to osc message streams - a way of sending osc messages</p>
+<h2 id="how-does-vortex-accomplish-this">how does vortex accomplish
+this?</h2>
+<p>vortex, in the <code>stream.py</code> file, implements a class called
+<code>LinkClock</code>. <code>LinkClock</code> interfaces with the
+AbeltonLink api for synchronising with external music applications.
+Inside this class is a private method
+<code>_notify_target_thread</code>. This method is spun off to a new
+thread when start is called on the clock. It uses a thread sleep in a
+while loop internally for timing. Each iteration of the loop
+communicates the tempo via AbeltonLink and notifies subscribing streams.
+The streams are then responsible for converting patterns to osc and
+sending over the network to the Synth Target.</p>
+<h2 id="how-does-strudel-accomplish-this">how does strudel accomplish
+this?</h2>
+<p>strudel, in the <code>Cyclist.mjs</code> file defines a
+<code>Cyclist</code> class. This class collaborates with a clock
+(defined in <code>zyklus.mjs</code>) to schedule events (called
+<code>hap</code> in strudel) in time. On each tick of the clock, the
+<code>Cyclist</code> queries its pattern and fires a function
+<code>onTrigger</code> that is specified during construction by the
+caller. In the <code>repl.mjs</code> file, a <code>Cyclist</code> is
+created and an <code>onTrigger</code> behavior is specified. The
+<code>repl</code> specifies an on trigger that then <code>awaits</code>
+a function called <code>defaultOutput</code>. This function is passed
+the event and the timing info when called. If the <code>context</code>
+of the event contains an <code>onTrigger</code> function this is used
+instead of <code>defaultOutput</code>. <code>defaultOutput</code> is
+specified on construction of the <code>repl</code>. When the react
+application that defines the web ide starts it sets defaultOutput to the
+<code>webAudioOutput</code>. The web audio output directly uses the
+events. In this configuration, no osc messages are produced. I believe
+that strudel can be configured to communicate with SuperDirt over the
+network as well and had osc classes in its library.</p>
+<h2 id="how-does-tidal-accomplish-this">how does tidal accomplish
+this?</h2>
+<p>For mainline tidal, the <code>stream.hs</code> module defines the
+following: - A data type called <code>Target</code> that contains the
+network configuration for an OSC target. - A type called stream -
+several functions for converting configuration data into
+<code>IO Stream</code>. - several functions mapping
+<code>Stream -&gt; IO</code>. These functions send OSC messages. -
+<code>toOSC :: [Int] -&gt; ProcessedEvent -&gt; OSC -&gt; [(Double, Bool, O.Message)]</code>.
+I think this is part of what converts events to OSC.
+<code>ProcessedEvent</code> is some intermediate type.</p>
+<h2 id="how-should-tranquility-accomplish-this">how should tranquility
+accomplish this?</h2>
+<h3 id="section">2023-01-27</h3>
+<p>Vortex might be easier to imitate at first as its implementation is
+simpler. Added complexity could be layered in later. The project already
+makes use of <code>LuaSocket</code> as part of its dependence on
+<code>losc</code> for sending osc messages. (This might need to be
+revisited as vortex uses <code>liblo</code>. It might be best to attempt
+to use the same libraries as others when possible. )
+<code>LuaSocket</code> provides a sleep method
+<code>socket.sleep(time)</code>. Perhaps coroutines could be used to
+spin up a clock process that sleeps internally this way to create the
+1/20 sample rate for querying patterns. A function for converting events
+to osc messages will need to be created.</p>
+<h3 id="coroutines">2023-02-02 - coroutines</h3>
+<p>Co-routines are a pattern for accomplishing cooperative multitasking.
+In cooperative multitasking, the program never cedes control of its run
+to an external party and concurrency is accomplished by explicit task
+switching in the program. Co-routines (cooperative routines), are
+sub-routines that can suspend their operation and <em>yeild</em> program
+flow back to the caller without returning. The caller can then
+<em>resume</em> the co-routine until it completes or <em>yeilds</em>
+again. This trades away the ability for true parallelism for more
+determinism is program flow while still providing concurrency.</p>
+<p>If tranquility is going to use this style of concurrency to
+accomplish multitasking between pattern parsing and sending osc
+messages, there will need to be some explicit part of the program in
+charge of this task switching. What if there were a scheduler process
+that switched between these two tasks? How could the tasks be defined?
+The clock/osc message process is more clear. There is a method on the
+subscribing <code>Stream</code> that is called by the publishing
+<code>Clock</code>. The <code>Clock</code> could return a co-routine
+when started that a <code>Scheduler</code> could repeatedly call. What
+about the other half of the tasks? How can the process of stream
+creation be defined as a co-routine that is called by this scheduler.
+Right now there is a global function <code>p</code> that adds processes
+to a global <code>Stream</code> map and starts the clock. These pieces
+of state (<code>Streams</code> and <code>Clock</code>) would need to be
+managed by the scheduler. But where does the user input come from that
+calls <code>p</code>? Could some <code>DSL</code> context be exported
+that would poll for new user input and then <code>yeild</code>? This
+would mean that there would be a good deal of busy-waiting... is there a
+better design that utilizes co-routines? Is it better to try an
+accomplish true parallelism?</p>
+<p>For tomorrow, I should try and make a lua script that makes a pattern
+<code>Pure("gabba")</code> and starts a clock with a stream of this
+pattern. Hopefully, this will create a distorted kick drum once per
+cycle and we will be at "gabba zero". <em>:)</em></p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Tranquility:
+Thoughts on scheduling events.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title></title>
+<meta name="generator" content="sitegen" />
+<meta property="og:title" content="blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:site_name" content="xinniw.net" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"06/03/2024","description":"The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise.","headline":"blog","name":"xinniw.net","url":"<?phpecho $page->path?>"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link href="/assets/css/prism.css" rel="stylesheet" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="xinniw" />  <!--[if lt IE 9]>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <header class="site-header">
+<div class="wrapper">
+    <a class="site-title" rel="author" href="/">xinniw</a>
+    <nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="-1 0 18 15" width="18px" height="15px">
+                <path d="M17,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+
+    <a class="page-link" href="/listen">/listen</a>
+
+    
+    <a class="page-link" href="/downloads">/downloads</a>
+
+    
+    <a class="page-link" href="/garden">/garden</a>
+
+    
+    <a class="page-link" href="/shows">/shows</a>
+
+    
+    <a class="page-link" href="/projects">/projects</a>
+
+    
+    <a class="page-link" href="/about">/about</a>
+
+              </div>
+    </nav>
+</div>
+
+
+  </header>
+
+    <p class="bg" ></p>
+    <main class="page-content" aria-label="Content">
+    <div class="background-div--effect">
+
+
+
+
+<div class="insert--div-tidalcode">
+
+<code class="language-haskell insert--code-tidalcode">
+    inversion = (* (-1))</code>
+<code class="language-haskell insert--code-tidalcode">
+    d3
+$ note
+((scaleP scalePattern
+  $ (rotR 4)
+  $ (+ slow 8 "x" <~> ((0.25 ~>) generateMelodicSeed))
+  -- $ slow 4 \n
+  $ generateMelodicSeed
+))#s "[pe-gtr:8,midi]" #gain 1.2 #orbit 2 #midichan 3
+</code>
+<code class="language-haskell insert--code-tidalcode">
+    generateMelodicSeed = slow 4
+  $ linger 0.5
+  $ repeatCycles 3
+  -- $ palindrome \n
+  $ (+ (slow (irand (4)+1) (sometimes (inversion) (run (irand (4)+1)))))
+  $ slow ((irand 3) + 1)
+  $ e ("x"<~>(irand 8)) 8
+  $ "x*16"<~>(irand 5)</code>
+<code class="language-haskell insert--code-tidalcode">
+    do
+d9 $ midicmd "stop" # s "midi"
+hush</code>
+<!-- {% for snippet in snippets ?> -->
+<!-- {% endfor ?> -->
+
+</div>
+
+      </div>
+<div class="wrapper">
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/model of future
+computing.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/model
+of future computing.md
+    </div>
+<hr />
+<h1
+id="permacomputing-modelling-the-future-of-computing">Permacomputing:
+Modelling the future of computing</h1>
+<p>The design of computational systems that can be preserved into the
+far future, like any design problem, is predicated on a set of
+expectations about the future. These expectations inform the design
+requirements and the scenarios against which a candidate design must be
+tested.</p>
+<p>Discussions about permacomputing that I have observed tend to assume
+one of the following models of the future.</p>
+<h1 id="collapse">Collapse</h1>
+<p>A popular model to assume is one of complete civilizational collapse.
+In this future, the complex supply chains that underpin modern computing
+are destroyed by some combination of climate instability, war, famine,
+pandemic or some other such host of apocalyptic problems. Computers, in
+so far as they are still used, must be entirely scavenged from existing
+machines. Through hole components would be prized in this scenario as
+they are easiest to de-solder.</p>
+<p>A designer operating under this set of assumptions would likely
+design for the performance profile of 8bit computers of the 80's as this
+models the kind of hardware that would be available for easy scavenging.
+In addition to severely limiting the required operating specifications,
+she might also consider targeting a small lightweight virtual machine
+that could be ported to some improvised computer hardware with minimal
+effort.</p>
+<h3 id="examples-of-design-that-assumes-the-collapse-model">examples of
+design that assumes the collapse model</h3>
+<ul>
+<li><a href="http://collapseos.org/.html">Collapse OS</a></li>
+<li><a href="https://wiki.xxiivv.com/site/uxn.html.html">UXN</a></li>
+</ul>
+<h1 id="moores-law-forever">Moore's Law Forever</h1>
+<p>Another popular model is to assume that Moore's law continued
+unabated into the distant future. This model has been prevalent in
+popular discourse surrounding the future of technology for many years.
+This model is often an underpinning assumption made by futurists
+interested in AI, singularity, other imagined futures where
+computational power becomes a god-like force.</p>
+<p>A designer operating under this vision of the future need not limit
+themselves in any way as computers of the future will be arbitrarily
+powerful.</p>
+<p>This view of Moore's law seems increasingly implausible as the
+trajectory of computational power has sagged in recent decades.</p>
+<p>A more careful designer who still assumes a future of increasingly
+powerful machines would still need to make considerations that limit the
+complexity of their design. In this future, the tools of the past would
+be unable to run, not because sufficient hardware is unavailable, but
+because the secrets required to build and extend its tooling have been
+forgotten. This designer may therefor still choose to place hard limits
+on the software she designs with the goal of making it possible for
+people in the far future to emulate her computational environment
+without undue effort.</p>
+<h1 id="a-3rd-model-responsible-design">A 3rd model: Responsible
+design</h1>
+<p>To this set I would like to include a 3rd model. In this vision of
+the future, we come to our senses and realize that we must radically
+alter our behavior in order to survive as a species. As part of this
+change, we realize that manufacturing every more powerful and
+complicated computers (which consumes ever greater amounts resources),
+only to throw them away a few years into their useful life to replace
+them with newer, even more complicated machines, is not sustainable.</p>
+<p>If this cycle of obsolescence was broken, what might we do
+instead?</p>
+<p>If we were to prioritize impact on our shared environment while still
+continuing to use computers in our lives, we would likely design these
+devices to last as long as possible, repair them when they broke, and
+design software to run on an extremely large number of possible hardware
+platforms. How long would a computer need to last in order to mitigate
+the environmental impact of its manufacture? For the sake of argument,
+lets say that this figure is 25 years.</p>
+<p>In this world, software designers would seek to avoid inadvertently
+forcing an end user to replace a working computer with a faster one.
+They might do this in the following ways: - Designing for some absolute
+minimum set of specifications - Designing graceful fail-overs for
+complicated features</p>
+<p>Here too, the idea of designing against some minimal virtual machine
+is appealing as it enables support for a wider variety of hardware
+platforms.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/model
+of future computing.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>
+</div>
+
+    <footer class="site-footer h-card">
+<data class="u-url" href="garden/model of future computing.html"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">xinniw</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">xinniw</li><li class="li--a-webring"><a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a rel="me" href="https://post.lurk.org/@xinniw"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg> <span class="username">xinniw</span></a></li><li><a href=""><img class="svg-icon" src="/assets/images/Spotify_Icon_CMYK_Black.png"/> <span class="username">xinniw</span></a></li><li><a href="https://www.youtube.com/channel/UCV75fqpnnjCmM0I7Fogf53w"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg><span class="username">YouTube</span></a></li><li><a href="/feed.xml"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>xinniw feed</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>ambient, techno, future music</p>
+        <p class="footer--p-credit">photography by gary minnix</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+  </main>
+</body>
+</html>

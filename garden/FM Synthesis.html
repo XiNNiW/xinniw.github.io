@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/FM Synthesis.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/FM
+Synthesis.md
+    </div>
+<hr />
+<h1 id="fm-synthesis">FM Synthesis</h1>
+<p>:cc0: Frequency Modulation synthesis is a technique pioneered by John
+Chowning. It is a synthesis technique where complex timbres are created
+from simple tones by rapidly changing the frequency of the tone. If the
+pitch is modulated at a rate where humans have pitch perception, audible
+side-bands are generated. The main tone is called the carrier wave and
+the tone that determines how fast to change the pitch is called the
+modulator wave.</p>
+<p>Many arrangements of modulators and carriers have been explored. Each
+arrangement has its own timbrel possibilities.</p>
+<p>Here is the typical equation for FM synthesis:</p>
+<p>$ y(t)=sin(w_{c}t+Bsin(w_{m}t)) $ Where <span
+class="math inline">\(w_{c}\)</span> is the carrier wave frequency,
+<span class="math inline">\(w_{m}\)</span> is the modulator frequency,
+and <span class="math inline">\(B\)</span> is the modulation index.</p>
+<p>The index controls how deeply the modulator affects the pitch and
+therefore also controls how harmonically rich the output is.</p>
+<p>The modulation frequency is typically set to some ratio of the
+carrier frequency. A simple relationship between these two typically
+creates a more harmonic spectra. Weirder results can be had by detuning
+this relationship.</p>
+<h3 id="band-limiting">Band-limiting</h3>
+<p>Although it is possible to predict the spectra of a FM oscillator
+precisely (see Stanford's <a
+href="https://ccrma.stanford.edu/software/snd/snd/fm.html">intro to
+FM</a>), it is not generally feasible to strictly <a
+href="Bandlimited%20Oscillator.md">band-limit</a> its output due to the
+theoretically infinite number of side-bands. However, for many FM
+architectures, the following rule of thumb can be used to limit the
+value of the modulation index <span class="math inline">\(B\)</span> in
+order to make sure that aliasing will be minimal. In this way, it can be
+<a href="Quasi-Bandlimited.html">Quasi-Bandlimited</a>. The rule of
+thumb is as follows:</p>
+<p>$ BW = 2f_{m}(B+1) $ Where <span class="math inline">\(BW\)</span> is
+bandwidth, <span class="math inline">\(B\)</span> is the modulation
+index, and <span class="math inline">\(f_{m}\)</span> is the modulation
+frequency. For a given pitch, you can solve for the maximum allowable
+bandwidth and then work backward to a maximum modulation index to limit
+to for that note.</p>
+<p>$ BW_{max} + f_{c} = \frac{f_{sr}} {2}$</p>
+<p>$ B_{max} = \frac {BW_{max}} {2f_{m}} - 1 $</p>
+<p>$ B_{max} = \frac{f_{sr}} {4f_{m}} $</p>
+<p>In practice I've found that if that doesn't work, you can just divide
+by a number larger than 4. This safety from aliasing will come at the
+cost reducing the brightness of the sound and may not be appropriate for
+all use cases. (eg. synthetic percussion)</p>
+<h3 id="fm-operators">FM operators</h3>
+<p>There are many ways to organize FM oscillators in relationship with
+one another. Since Yamaha commercialized the algorithm in the 1980's, it
+has been most common to organize them in terms of FM operators. An FM
+operator is simply a waveform (often <span
+class="math inline">\(sin\)</span>) multiplied by some envelope.
+(typically ADSR)</p>
+<p>$ op(t,modulators) = env(t)wave(wt+Bmodulators(t)) $ These operators
+are then set to modulate each other in various ways. For example, the
+following is a common arrangement that might be found on a Yamaha
+synth:</p>
+<p>$ op_{A}(t, op_{B}(t) + op_{B}(t) + op_{C}(t) + op_{D}(t)) $ The
+envelopes allow different spectra to be animated over time. This can be
+used in an attempt to model instruments like horns or simple explored on
+its own terms.</p>
+<p>This arrangement is very flexible but creates a lot of parameters to
+control.</p>
+<h3 id="feedback-fm">Feedback FM</h3>
+<p>Even wilder timbres can be made by allowing an operator to modulate
+itself. The basic idea is the same as regular FM except that the
+modulator signal is the carrier signal delayed by 1 sample. Chaos is
+easily achieved leading to noisy textures that make for good percussion.
+At low feedback settings the system usually doesn't devolve directly
+into noise but rather is made harsher and more aggressive by the
+feedback.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/FM
+Synthesis.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

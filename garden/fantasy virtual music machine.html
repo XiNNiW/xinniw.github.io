@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/fantasy virtual music
+machine.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/fantasy
+virtual music machine.md
+    </div>
+<hr />
+<h1 id="a-fantasy-virtual-machine-for-music">A Fantasy Virtual Machine
+for Music</h1>
+<p>What would a sustainable environment for computer music look
+like?</p>
+<p>It would have to balance the following constraints: - Portability to
+a large variety of old and scavenged hardware - Enough precision to
+achieve acceptable sound complexity - Enough speed to render multiple
+voices of sound and complete audio editing and sound design tasks</p>
+<p>The goal would be to make an instrument that one would be happy
+playing for the rest of one's life. This property is expected of
+violins, guitars, pianos and other traditional instruments. How could
+this property be extended to digital instruments? This is a larger
+question with many cultural, and sociological implications. For now lets
+explore the simple technical questions. A digital instrument like the
+one described above would have to balance novelty, and quality against
+hardware that are as limited as possible. The more limited the hardware
+specifications targeted, the more likely this instrument will be able to
+be emulated far into the future on whatever hardware is available. It is
+important here to specify what <a
+href="model%20of%20future%20computing.html">model of future
+computing</a> one wishes to use. For example, should this digital
+instrument be designed to weather a total collapse of the supply chains
+that make computers possible? Should it instead model a future defined
+by a literal interpretation of Moore's Law and assume that future
+hardware will be faster, better, and therefor capable of emulating any
+system designed now?</p>
+<p>These constraints are obviously in tension with each other. An
+acceptable polyphony of voices using high sample rates and large bit
+depths requires fast processing speeds. Powerful sampling capabilities
+and large numbers of tracks require large amounts of RAM. Finally the
+GUI environment that popular music software runs inside of has become
+more resource intensive. At first glance it seems like the modern
+concept of a DAW really only became possible with the advent of SIMD
+instruction sets. If this is set as a requirement, it severely limits
+portability to older hardware. However, I'm not so sure that these high
+flying specs really are required in order to make a computer instrument
+that one could happily spend the rest of their life playing.</p>
+<p>I believe it is possible to create a digital instrument flexible
+enough for many lifetimes of exploration within fairly modest
+computational limits.</p>
+<h1
+id="technical-requirements-of-popular-music-tools-of-the-past">Technical
+requirements of popular music tools of the past</h1>
+<p>It may be useful to look at historical music software and think about
+its minimum operating specs and the breadth of features offered within
+those limitations.</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Software</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>Feature Set</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a
+href="Minimum%20requirements:%20Abelton%20Live%201.5.html">Abelton Live
+v.1.5</a></td>
+<td>300 MHZ</td>
+<td>64MB</td>
+<td>Recording, editing, sample warp, audio effects</td>
+</tr>
+<tr class="even">
+<td>Abelton v.4</td>
+<td>600 MHZ</td>
+<td>256MB</td>
+<td>midi, synthesis, clip envelopes, multitrack recording</td>
+</tr>
+<tr class="odd">
+<td>GarageBand v1</td>
+<td>600 MHZ</td>
+<td>512MB</td>
+<td>Recording, editing, synthesizers, audio effects, midi</td>
+</tr>
+<tr class="even">
+<td>Abelton v.5</td>
+<td>600 MHZ</td>
+<td>512MB</td>
+<td>+complex warp, delay compensation, 24-bit /192 kHz recording</td>
+</tr>
+<tr class="odd">
+<td>MaxMSP v.4</td>
+<td>1GHZ</td>
+<td>512MB</td>
+<td>arbitrary graphical programming for sequencing and synthesis</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/fantasy
+virtual music machine.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

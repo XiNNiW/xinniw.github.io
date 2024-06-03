@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/digital sampling.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/digital
+sampling.md
+    </div>
+<hr />
+<h1 id="digital-sampling">Digital Sampling</h1>
+<p>Sound (and analogous signals) are represented inside the computer in
+the form of samples. A sample is a snapshot of the signal's amplitude
+value at a given point in time. These samples are collected at regular
+intervals. The speed at which the samples are collected is called the
+sample rate.</p>
+<p>A signal is represented as a long stream of these sample values. (for
+example: <code>[0 0.2 0.22 -0.1 -0.02 -0.5 -1 -0.66 ...]</code> could be
+a signal inside the computer.)</p>
+<p>The stream of sample values is converted to real sound (ie. pressure
+waves in the air) by a Digital Audio Converter (<a
+href="DAC.html">DAC</a>) coupled with an amplifier and speaker. The DAC
+takes the sampled values and creates a smooth, continuous analog voltage
+by interpolating between the sample values using sinusoidal waves. This
+voltage is then typically amplified and fed to a speaker.</p>
+<p>The sample rate affects what kinds of sounds can be accurately
+recorded and reproduced. Nyquist's sampling theorem states that the
+highest frequency that can be accurately represented by a sampled
+recording is 1/2 the sampling rate. In modern computers, 44.1 kHz, 48
+kHz, and 96 kHz are the most common sampling rates. If sample values
+fluctuate at more than 1/2 the sample rate, the tone will <a
+href="aliasing.md.html">alias</a>, resulting in in-harmonic distortion
+of the signal.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/digital
+sampling.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

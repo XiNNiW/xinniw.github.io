@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title></title>
+<meta name="generator" content="sitegen" />
+<meta property="og:title" content="blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:site_name" content="xinniw.net" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"06/03/2024","description":"The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise.","headline":"blog","name":"xinniw.net","url":"<?phpecho $page->path?>"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link href="/assets/css/prism.css" rel="stylesheet" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="xinniw" />  <!--[if lt IE 9]>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <header class="site-header">
+<div class="wrapper">
+    <a class="site-title" rel="author" href="/">xinniw</a>
+    <nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="-1 0 18 15" width="18px" height="15px">
+                <path d="M17,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+
+    <a class="page-link" href="/listen">/listen</a>
+
+    
+    <a class="page-link" href="/downloads">/downloads</a>
+
+    
+    <a class="page-link" href="/garden">/garden</a>
+
+    
+    <a class="page-link" href="/shows">/shows</a>
+
+    
+    <a class="page-link" href="/projects">/projects</a>
+
+    
+    <a class="page-link" href="/about">/about</a>
+
+              </div>
+    </nav>
+</div>
+
+
+  </header>
+
+    <p class="bg" ></p>
+    <main class="page-content" aria-label="Content">
+    <div class="background-div--effect">
+
+
+
+
+<div class="insert--div-tidalcode">
+
+<code class="language-haskell insert--code-tidalcode">
+    d9 $ midicmd "start" # s "midi"</code>
+<code class="language-haskell insert--code-tidalcode">
+    d1
+$ note
+((scaleP scalePattern
+  $ off 4 ((+ 2 ).slow 2)
+  $ off 1 (inversion.slow 2)
+  $ off 3 (inversion.slow 3)
+  $ off 1.5 ((+ 2).rev.slow 2)
+  $ generateMelodicSeed
+))#s "[pe-gtr:10,midi]" #gain 1 #orbit 0 #midichan 1</code>
+<code class="language-haskell insert--code-tidalcode">
+    d9 $ midicmd "start" # s "midi"</code>
+<code class="language-haskell insert--code-tidalcode">
+    let melody = slow 6 $ "0 2 [4 8 .] [3 4 3] 8 4 9"</code>
+<!-- {% for snippet in snippets ?> -->
+<!-- {% endfor ?> -->
+
+</div>
+
+      </div>
+<div class="wrapper">
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Linear Predictive Coding.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Linear
+Predictive Coding.md
+    </div>
+<hr />
+<h1 id="linear-predictive-coding-lpc">Linear Predictive Coding
+(LPC)</h1>
+<p>Linear predictive coding is a set of analysis and re-synthesis
+techniques. It is often used for data compression of speech but also has
+application for cross-synthesis, pitch corrections, and other more
+experimental techniques. It works by modeling a source signal as a set
+of all-pole bandpass filters excited by either a noise source or a
+pulse-wave. The coefficients of these filters are estimated using linear
+regression and animated over time to create the illusion of speech. As a
+data compression technique it can achieve up to a 17:1 reduction in data
+for a speech signal.</p>
+<p>It excels at modelling speech but can also be highly successful in
+modelling other monophonic sounds that include pitched and unpitched
+moments.</p>
+<p>When modelling speech, the noise source is used to excite the filters
+during consonants and the pulse wave is used to excite the filters
+during vowels.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>A given input signal <span class="math inline">\(x(n)\)</span> is
+modelled as a bank of bandpass filters (<span
+class="math inline">\(h(n)\)</span>) excited by a source signal (<span
+class="math inline">\(e(n)\)</span>).</p>
+<p><span class="math display">\[
+x(n) = h(n)*e(n)
+\]</span> If the timestep being modelled is a pitched sound <span
+class="math inline">\(e(n)\)</span> will be modelled as a pulse train.
+If the timestep is unpitched <span class="math inline">\(e(n)\)</span>
+will be white noise. In either case, <span
+class="math inline">\(e(n)\)</span> is spectrally flat and all harmonic
+information is modelled in the filter <span
+class="math inline">\(h(n)\)</span>. <span class="math display">\[
+X(z) = H(z)E(z)$
+     = \frac{1}{1 - \sum{k=1}^p a_{k}z^-k}E(z)
+= \sum{k=0}^p a_{k}z^-k X(z) + E(z)
+...z transform...
+x(n) = \sum{k=1}^p a_{k}x(n-k) + e(n)
+\]</span></p>
+<p>In order to create the model above we need values for our filter and
+we need to know if we should use noise or a pitched sound for our
+source. If we want a pitched sound we also need to know what pitch we
+should use.</p>
+<h3 id="estimating-filter-coefficients">Estimating filter
+coefficients</h3>
+<p>If we can find the coeficcients <span class="math display">\[a_{k},
+k=1...p\]</span> for a given timestep, we can model the signal for that
+timestep.</p>
+<p>Note: in order to do this our signal needs to be longer than the
+<span class="math display">\[p\]</span> timesteps neccesary for our
+filter memory.</p>
+<p>Given <span class="math inline">\(N\)</span> samples we can write
+<span class="math inline">\(N\)</span> equations and solve them. $$ a =
+\begin{bmatrix} a_{1} \ ... \ a_{p} \end{bmatrix} x_{i} =
+[x(n-1+i)...x(n-p+i)]</p>
+<p>x(n) = x_{0} \cdot a + e(n) x(n+1) = x_{1} \cdot a + e(n) ... x(n+N)
+= x_{N} \cdot a + e(n+N) $$</p>
+<p>Each equation contains our <span class="math inline">\(p\)</span>
+coefficients based on the samples from our signal <span
+class="math inline">\(x(n)\)</span>. This system is overdetermined as
+there are more equations than variables to solve. Therefor, we
+approximate a solution using the method of least squares.</p>
+<p>We can rewrite our equations as: <span class="math display">\[
+e = b - A \cdot a
+  = b - \hat{b}
+\]</span> where: <span class="math display">\[
+b = \begin{bmatrix} \\ x(n) \\ ... \\ x(n-N) \end{bmatrix}
+e = \begin{bmatrix} e(n) \\ ... \\ e(n-N) \eng{bmatrix}
+A = \begin{bmatrix} x_{0} \\ ... \\ x_{N} \end{bmatrix}
+\]</span></p>
+<p>Notice that <span class="math inline">\(b\)</span> is our original
+signal <span class="math inline">\(x\)</span>, <span
+class="math inline">\(\hat{b}\)</span> is our estimated signal, and our
+noise/pulse input <span class="math inline">\(e(n)\)</span> is now the
+error of our estimation.</p>
+<p>In the method of least squares, we try to minimize that value of
+<span class="math inline">\(||e(n)||^2\)</span>. As the system is
+overdetermined, there is no exact solution. Another way of saying this
+is that our signal vector <span class="math inline">\(b\)</span> is not
+in the column space defined by <span class="math inline">\(A \cdod
+a\)</span>. When we say minimize <span
+class="math inline">\(||e(n)||^2\)</span> we want to find the line that
+IS in our column space that is as close as possible to <span
+class="math inline">\(b\)</span>. The vector in our column space that is
+closest is defined as the projection of <span
+class="math inline">\(b\)</span> onto <span class="math inline">\(A
+\cdot a\)</span>. (Kahn academy video for solving this system:
+https://www.youtube.com/watch?v=MC7l96tW8V8)</p>
+<p><span class="math display">\[
+a = (A^T A)^-1 A^T b
+\]</span> With this we have found the resonances.</p>
+<h3 id="estimating-the-residual-en">Estimating the residual, e(n)</h3>
+<p>We need to know the following: - the power of the signal x(n) - the
+pitch of x(n) ... this will require pitch detection</p>
+<h3 id="analysis">Analysis</h3>
+<p>We break the signal up into windows <span
+class="math inline">\(N\)</span> samples long, apply and overlap add
+window function, and use the process above to solve the values of <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(e\)</span>.</p>
+<p>something something Yule-Walker equations and FFT for faster
+implementation... they provide a way to get <span
+class="math inline">\(a\)</span> and the power/variance from the
+auto-correlation of the signal... <span class="math display">\[
+R \vec{a} = -\vec{r}
+a = -R^-1 \vec{r}
+\]</span></p>
+<h3 id="re-synthesis">Re-synthesis</h3>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Linear
+Predictive Coding.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>
+</div>
+
+    <footer class="site-footer h-card">
+<data class="u-url" href="garden/Linear Predictive Coding.html"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">xinniw</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">xinniw</li><li class="li--a-webring"><a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a rel="me" href="https://post.lurk.org/@xinniw"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg> <span class="username">xinniw</span></a></li><li><a href=""><img class="svg-icon" src="/assets/images/Spotify_Icon_CMYK_Black.png"/> <span class="username">xinniw</span></a></li><li><a href="https://www.youtube.com/channel/UCV75fqpnnjCmM0I7Fogf53w"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg><span class="username">YouTube</span></a></li><li><a href="/feed.xml"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>xinniw feed</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>ambient, techno, future music</p>
+        <p class="footer--p-credit">photography by gary minnix</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+  </main>
+</body>
+</html>

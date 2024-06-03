@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/aliasing.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/aliasing.md
+    </div>
+<hr />
+<h1 id="aliasing">Aliasing</h1>
+<p>Aliasing is where a digital signal (or some component of a signal)
+fluctuates at a frequency higher than 1/2 the sampling rate. For
+example, assuming a sampling rate of 48 kHz, any tone or harmonic higher
+than 22 kHz will alias. The energy of the aliased tone will then be
+reflected downward in pitch into potentially audible side-bands. The
+result is typically the introduction of high-pitched in-harmonic tones
+to the signal. Sometimes this effect is <a
+href="sample%20rate%20reduction.html">desirable</a>. Most often it is
+not desirable.</p>
+<p>Consider the following signal: <code>[0 1 0 -1 0]</code> Upon output,
+the <a href="DAC.html">DAC</a> will interpolate between these points
+using a sinusoidal wave. The result will be a tone at 1/4 the sample
+rate as its period is 4 samples long.</p>
+<p>Imagine that we tried to generate a signal that was 3/4 the sample
+rate. The values that we would sample would be as follows:
+<code>[0 1 0 -1 0]</code></p>
+<p>Its the same signal and would result in a tone 1/4 of the sample
+rate. Any signal component that fluctuates faster than 1/2 the sample
+rate will result in a copy or alias of that component of a lower
+pitch.</p>
+<p>What would happen if we tried to generate a signal at the sample
+rate? If the wave started at precisely the same moment as the first
+sample we would end up with the following signal:
+<code>[0 0 0 0]</code>. Every time we record the value, the wave is at
+the same position as it started. If it were perfectly out of phase with
+the first sample: <code>[1 -1 1 -1]</code>.</p>
+<p>This effect has analogues in video and other sampled mediums. Our
+example above is the audio equivalent of a wheel rotating at the frame
+rate of the camera. It appears in the footage to be completely
+still.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/aliasing.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

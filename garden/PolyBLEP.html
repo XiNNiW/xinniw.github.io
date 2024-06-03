@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/PolyBLEP.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/PolyBLEP.md
+    </div>
+<hr />
+<h1 id="polyblep">PolyBLEP</h1>
+<p>PolyBLEP (which stands for polynomial bandlimited step) is a
+technique for anti-aliasing. <a href="aliasing.html">Aliasing</a> occurs
+when a signal contains frequency components that are higher than the
+Nyquist limit of 1/2 the sample rate. Sudden discontinuities in
+waveforms (like those found in classic analog waveforms like saw and
+square) theoretically contain an infinite amount of harmonics. Naive
+implementations of these shapes will certainly alias in ways that are
+audible. PolyBLEP reduces the aliasing associated with these
+discontinuities by replacing them with smoother polynomial segments.
+This method does not totally eliminate aliasing but can reduce it
+dramatically for the most sensitive areas of hearing.</p>
+<p>This differs form other methods of band-limiting such as the
+bandlimited integrated pulse (<a href="BLIT">BLIT</a>) and the discrete
+summation function (<a href="DSF.html">DSF</a>) inthat it computes only
+the sharp transition regions as polynomials and replaces them using a
+piecewise function of time.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/PolyBLEP.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

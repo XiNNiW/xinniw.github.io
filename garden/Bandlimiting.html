@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Bandlimiting.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Bandlimiting.md
+    </div>
+<hr />
+<p>:cc0:</p>
+<h1 id="band-limiting">Band-limiting</h1>
+<p>Bandlimiting is when a digital audio algorithm is prevented from
+producing frequencies outside the 1/2 sample rate nyquist limit. This
+prevents <a href="aliasing.html">aliasing</a>.</p>
+<p>A synthesis algorithm can be prevented by design from producing
+harmonics that exceed this limit. (see: <a
+href="Bandlimited%20Oscillator.html">Bandlimited Oscillator</a>)</p>
+<p>An algorithm that can not be bandlimited by design may still be
+bandlimited by <a href="oversampling.html">oversampling</a> and
+filtering. When oversampled, the out of bounds harmonics can still be
+filtered out before the sample rate is converted back to the main sample
+rate. This prevents the aliased frequencies from being sampled at
+all.</p>
+<p>A synthesis algorithm may be <a
+href="Quasi-Bandlimited.html">Quasi-Bandlimited</a> if some other
+technique or heuristic is used to prevent out of bounds harmonics from
+being too loud or too noticeable but does not prevent them all
+together.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Bandlimiting.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

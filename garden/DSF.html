@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/DSF.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/DSF.md
+    </div>
+<hr />
+<h1 id="dsf-discrete-summation-formula">DSF (Discrete Summation
+Formula)</h1>
+<p>:cc0:</p>
+<p>A DSF is an approximation of an ideal waveform (such as SAW or
+SQUARE) that uses trig identities to approximate the wave up to a given
+number of harmonics.</p>
+<p>All periodic sound can be represented a <a
+href="Fourier%20series">Fourier series</a> of individual sine and cosine
+waves. This infinite series can be truncated to produce a wave with a
+given number of harmonics. (see: <a
+href="Bandlimited%20Oscillator">Bandlimited Oscillator</a>) This
+truncated sum may have a "closed form" solution when trig identities can
+be used to reduce the sum to a single term. This makes it more efficient
+to implement than <a href="Additive%20Synthesis.html">Additive
+Synthesis</a>.</p>
+<p>Like the basic <a href="BLIT">BLIT</a> algorithm, DSF has limitations
+when it comes to smoothly changing/glissing frequencies the number of
+harmonics in a DSF formula is an integer value. When trying to render a
+<a href="glissando.html">glissando</a> with a DSF the harmonics entering
+and leaving the sound can be heard as abrupt steps.</p>
+<h1 id="example">example</h1>
+<p>The following is a summary of an example presented in <em>Computer
+Music</em> by Dodge and Jerse:</p>
+<p>A band-limited pulse wave with <code>N</code> harmonics can be
+constructed with the formula:</p>
+<p>$ y(t) = \frac {A} {N} \sum_{k=1}<sup>N</sup> cos(2 \pi kf_ot) $</p>
+<p>This sum can be reduced to the following "closed form" DSF:</p>
+<p>$ y(t) = \frac {A} {2N} [\frac {sin((2N+1) \pi f_ot)} {sin(\pi f_o
+t)} -1]$</p>
+<p>An implementation using the bottom form will need to account for the
+case where the denominator goes to zero. For this case the formula above
+can be re-written with cosines:</p>
+<p>$ y(t) = \frac {A} {2N} [\frac {(2N+1) cos((2N+1) \pi f_ot)} {cos(\pi
+f_o t)} - 1] $</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/DSF.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>

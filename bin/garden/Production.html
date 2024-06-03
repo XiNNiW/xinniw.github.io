@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+  <title></title>
+<meta name="generator" content="sitegen" />
+<meta property="og:title" content="blog" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:description" content="The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise." />
+<meta property="og:site_name" content="xinniw.net" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="blog" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","dateModified":"06/03/2024","description":"The personal website of David Minnix. David is an artist, software engineer, and musician who makes noise and tools for making noise.","headline":"blog","name":"xinniw.net","url":"<?phpecho $page->path?>"}</script>
+<!-- End Jekyll SEO tag -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <link href="/assets/css/prism.css" rel="stylesheet" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="xinniw" />  <!--[if lt IE 9]>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+    <header class="site-header">
+<div class="wrapper">
+    <a class="site-title" rel="author" href="/">xinniw</a>
+    <nav class="site-nav">
+          <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+          <label for="nav-trigger">
+            <span class="menu-icon">
+              <svg viewBox="-1 0 18 15" width="18px" height="15px">
+                <path d="M17,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+
+    <a class="page-link" href="/listen">/listen</a>
+
+    
+    <a class="page-link" href="/downloads">/downloads</a>
+
+    
+    <a class="page-link" href="/garden">/garden</a>
+
+    
+    <a class="page-link" href="/shows">/shows</a>
+
+    
+    <a class="page-link" href="/projects">/projects</a>
+
+    
+    <a class="page-link" href="/about">/about</a>
+
+              </div>
+    </nav>
+</div>
+
+
+  </header>
+
+    <p class="bg" ></p>
+    <main class="page-content" aria-label="Content">
+    <div class="background-div--effect">
+
+
+
+
+<div class="insert--div-tidalcode">
+
+<code class="language-haskell insert--code-tidalcode">
+    d3
+$ note
+((scaleP scalePattern
+  $ (rotR 4)
+  $ (+ slow 8 "x" <~> ((0.25 ~>) generateMelodicSeed))
+  -- $ slow 4 \n
+  $ generateMelodicSeed
+))#s "[pe-gtr:8,midi]" #gain 1.2 #orbit 2 #midichan 3
+</code>
+<code class="language-haskell insert--code-tidalcode">
+    hush</code>
+<code class="language-haskell insert--code-tidalcode">
+    do
+cps (86/60/2)
+d9 $ midicmd "midiClock*48" # s "midi"</code>
+<code class="language-haskell insert--code-tidalcode">
+    do
+cps (86/60/2)
+d9 $ midicmd "midiClock*48" # s "midi"</code>
+<!-- {% for snippet in snippets ?> -->
+<!-- {% endfor ?> -->
+
+</div>
+
+      </div>
+<div class="wrapper">
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Production.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Production.md
+    </div>
+<hr />
+<p>:cc-by-nc-sa:</p>
+<h1 id="production-and-mixing">Production and Mixing</h1>
+<h1 id="mixing-workflow">Mixing workflow</h1>
+<ul>
+<li>turn everything down to silent</li>
+<li>Bring up the drums until they sound nice</li>
+<li>Bring up the bass until it sounds good with the drums</li>
+<li>Bring up each of the other elements until each fits and doesn't
+conflict</li>
+</ul>
+<h1 id="get-rid-off-unnecessary-low-frequencies">Get rid off unnecessary
+low frequencies</h1>
+<ul>
+<li>use and EQ to remove the frequencies below <sub>20</sub>-30 hz on
+individual tracks... they add up in the mix and can clutter things</li>
+</ul>
+<h1 id="fx-in-general">FX in general</h1>
+<ul>
+<li>for many effects where a dry wet is used (reverb and delay), its
+better to put them on a bus than on the track fx</li>
+</ul>
+<h1 id="compression">Compression</h1>
+<ul>
+<li>turn the ratio up</li>
+<li>turn the attack and release up</li>
+<li>turn the threshold down until it starts to engage</li>
+<li>adjust attack until the bass sounds good</li>
+<li>adjust the release until the treble sounds good</li>
+</ul>
+<h1 id="reverb">Reverb</h1>
+<ul>
+<li>put it on a bus</li>
+<li>compress your verb... try it...</li>
+</ul>
+<h1 id="layering">Layering</h1>
+<p>one strategy for creating more interesting timbres in arrangements is
+to layer timbres together. Layer synths, guitars, horns, basses,
+ect...</p>
+<h1 id="hocketing">Hocketing</h1>
+<p>a melody can be made more interesting by alternating which
+instruments play a given note in the melody. This is called
+hocketing.</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Production.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>
+</div>
+
+    <footer class="site-footer h-card">
+<data class="u-url" href="garden/Production.html"></data>
+
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">xinniw</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">xinniw</li><li class="li--a-webring"><a href='https://webring.xxiivv.com/#random' target='_blank'><img src='https://webring.xxiivv.com/icon.black.svg'/></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a rel="me" href="https://post.lurk.org/@xinniw"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#mastodon"></use></svg> <span class="username">xinniw</span></a></li><li><a href=""><img class="svg-icon" src="/assets/images/Spotify_Icon_CMYK_Black.png"/> <span class="username">xinniw</span></a></li><li><a href="https://www.youtube.com/channel/UCV75fqpnnjCmM0I7Fogf53w"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#youtube"></use></svg><span class="username">YouTube</span></a></li><li><a href="/feed.xml"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg> <span>xinniw feed</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>ambient, techno, future music</p>
+        <p class="footer--p-credit">photography by gary minnix</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+  </main>
+</body>
+</html>

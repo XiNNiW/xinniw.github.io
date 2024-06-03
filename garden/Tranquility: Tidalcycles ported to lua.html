@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<html>
+<head>
+<title>/home/xinniw/Documents/garden/Tranquility: Tidalcycles ported to
+lua.md</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta http-equiv="Content-Type" content="text/html">
+</head>
+<body>
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Tranquility:
+Tidalcycles ported to lua.md
+    </div>
+<hr />
+<h1 id="tranquility">Tranquility</h1>
+<p>Tranquility is a port of Tidalcycles to lua. - <a
+href="Comparison%20of%20OSC%20libraries.html">Comparison of OSC
+libraries</a> - <a
+href="Tranquility:%20Thoughts%20on%20scheduling%20events.html">Tranquility:
+Thoughts on scheduling events</a></p>
+<h2 id="project-log">project log</h2>
+<ul>
+<li>a bunch of past stuff</li>
+</ul>
+<h3 id="section">2023-02-09</h3>
+<p>announced Tranquility on the tidalcycles forum and asked for help
+with my cooperative multitasking question...</p>
+<h3 id="section-1">2023-02-10</h3>
+<p>I'm pretty sure its my implementation of Pattern that is the problem
+and not the <code>LinkClock</code>. I made the thread sleep super long
+and it actually waited to send the osc message... I think when
+<code>onsetsOnly</code> is called it thinks that every moment inside of
+<code>Pure("gabba")</code> has an onset...</p>
+<h3 id="section-2">2023-02-16</h3>
+<p>I wrote unit tests to isolate the problem with the pattern
+implementation. For a while it looked like I had exposed the problem.
+The test revealed events coming back after <code>onsetOnly</code>
+filtering even though part and whole would have different onsets... this
+would cause the pattern to behave like a continuous signal and cause the
+chainsaw kicks I was hearing in superdirt</p>
+<p>However, I had been careless in the way I wrote the test. After I
+fixed my mistake it passed. I'm back to the drawing board on the
+problem. I am now convinced it must be a problem in the scheduler.</p>
+<p>Here is what I know... the thread is sleeping as expected... the
+pattern created by <code>Pure</code> behaves as expected and has only
+one onset at the beginning of the cycle.</p>
+<p>This leads me to believe that it is being queried incorrectly... for
+example, the scheduler may be repeatedly asking for the beginning of the
+cycle and thus is repeatedly returning the onset...</p>
+<p>AHA! found it... it's because I didn't make the convenience
+constructor for fraction that converts decimal numbers to the closest
+fractional representation... the <code>LinkClock</code> queries the
+<code>notifyTick</code> method with decimal numbers... these are
+interpreted as the nearest whole cycle...</p>
+<h3 id="section-3">2023-03-20</h3>
+<p>Finally finished an implementation of fast, slow, and cat. How to
+make it possible to interact with the system over a repl given lua's
+single threaded nature is still a puzzle</p>
+<hr />
+<div>
+    <a href="index.html">index</a> > /home/xinniw/Documents/garden/Tranquility:
+Tidalcycles ported to lua.md
+      </ol>
+    </div>
+	</div>
+</body>
+</html>
